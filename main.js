@@ -10,8 +10,15 @@ const scrollRevealOption = {
     origin: "bottom",
     duration: 1000,
   };
-  
-  ScrollReveal().reveal(".container .letter-s", {
+  ScrollReveal().reveal(".container .nav__left", {
+    duration: 1000,
+    delay: 1000,
+  });
+  ScrollReveal().reveal(".container .nav__right", {
+    duration: 1000,
+    delay: 1000,
+  });
+  ScrollReveal().reveal(".container .logo", {
     duration: 1000,
     delay: 1000,
   });
@@ -29,6 +36,12 @@ const scrollRevealOption = {
     origin: "left",
     delay: 2000,
   });
+  ScrollReveal().reveal(".container .subtext", {
+    ...scrollRevealOption,
+    origin: "bottom",  
+    delay: 2200,       
+});
+
   ScrollReveal().reveal(".container .explore", {
     duration: 1000,
     delay: 2500,
@@ -46,10 +59,7 @@ const scrollRevealOption = {
     duration: 1000,
     delay: 5500,
   });
-  ScrollReveal().reveal(".footer p", {
-    duration: 1000,
-    delay: 7000,
-  });
+
 
 
 //validation COde
