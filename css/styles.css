@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
 
 :root {
-  --primary-color: #8263a3;
+  
   --text-dark: rgb(39,96,64);
+  --text-dark: grey;
   --white: #ffffff;
   --max-width: 1600px;
   --background-color:rgb(243,244,230);
@@ -37,7 +38,7 @@ body {
   background-color:var(--background-color) ;
 }
 
-body::after {
+/* body::after {
   position: fixed;
   content: "";
   height: 100%;
@@ -48,7 +49,7 @@ body::after {
   z-index: -1;
 
   animation: body-bg 1s ease-in-out forwards;
-}
+} */
 
 @keyframes body-bg {
   0% {
@@ -66,7 +67,7 @@ body::before {
   transform: translate(-50%, -50%);
   font-size: 70rem;
   font-weight: 200;
-  color: var(--white);
+  color: var(--text-dark);
   z-index: -1;
   opacity: 0.5;
 }
@@ -114,21 +115,10 @@ nav {
 }
 
 .nav__right a {
-  color: var(--white);
+  color: var(--text-dark);
 }
 
 .nav__links a:hover {
-  color: var(--primary-color);
-}
-
-.letter-s {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40rem;
-  line-height: 40rem;
-  font-weight: 900;
   color: var(--primary-color);
 }
 
@@ -187,7 +177,7 @@ nav {
   right: 0;
   transform: translate(0, -50%) rotate(90deg);
   padding: calc(1rem - 4px) calc(2rem - 4px);
-  color: var(--white);
+  color: var(--text-dark);
   background-color: transparent;
   border: 1px solid var(--white);
 }
@@ -224,7 +214,7 @@ nav {
 }
 
 .feature-2 {
-  color: var(--white);
+  color: var(--text-dark);
   transform: translate(calc(-50% + 300px), calc(-50% - 200px));
 }
 
@@ -234,7 +224,7 @@ nav {
 }
 
 .feature-4 {
-  color: var(--white);
+  color: var(--text-dark);
   transform: translate(calc(-50% + 300px), calc(-50% + 235px));
 }
 
@@ -249,7 +239,7 @@ nav {
 .feature-4::after {
   left: 0;
   transform: translate(calc(-100% - 40px), -50%);
-  background-color: var(--white);
+  background-color: var(--text-dark);
 }
 /* Subtext Styling */
 .sub-text {
