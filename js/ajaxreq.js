@@ -106,8 +106,23 @@ function clearRegfield(){  // Line 65
 
 //Ajax call for user login verification 
 function checkuserlogin(){
+    var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
     var userlogemail=$("#userlogemail").val();
     var userlogpass=$("#userlogpass").val();
+   
+    if(userlogemail.trim()==""){
+        $("#msg2").html('<span>Please Enter Email !</span>'); 
+        $("#userlogemail").focus();
+        return false;  
+    }
+    else if (userlogemail.trim() !== "" && !reg.test(userlogemail)){
+        $("#msg2").html('<span>Please Enter  a valid Email Eg. abd@xyz.com !</span>'); 
+        $("#useremail").focus();
+    }else if(userlogpass.trim()==""){
+            $("#msg4").html('<span>Please Enter Password !</span>'); 
+            $("#userlogpass").focus();
+            return false; 
+    }else{
     $.ajax({
         url:'users/adduser.php',
         method:'POST',
@@ -127,7 +142,7 @@ function checkuserlogin(){
             }
         }
     })
-
+}
 }
 
 

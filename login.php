@@ -35,6 +35,7 @@
               <h5 class="text-center mb-4">LOGIN</h5>
               <form role="form">
                   <div class="mb-3">
+                  <small id="msg2" class="d-block"></small>
                   <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     <input type="email" class="form-control" id="userlogemail" placeholder="Enter your Email"/>
@@ -42,6 +43,7 @@
                 </div>
 
                 <div class="mb-3">
+                <small id="msg4" class="d-block text-danger"></small>
                   <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     <input type="password" class="form-control" id="userlogpass" placeholder="Enter your Password" />

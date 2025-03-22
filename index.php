@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css" />
+    
     <title>BOLD VIEWS STUDIO</title>
   </head>
-  <body>
+  
+  <body >
     
       <nav class="nav_head">
         <ul class="nav__links nav__left">
@@ -39,7 +41,13 @@
         Ready to elevate your brand? Step inside to see how Bold Views Studio
         brings your vision to life.
       </h3>
-      <button class="btn explore">EXPLORE MORE</button>
+      <?php
+      if(!isset($_SESSION['is_login'])){
+         echo ' <button class="btn explore">EXPLORE MORE</button>';
+      }else{
+        echo ' <button class="btn explore">My Profile </button>';
+      }
+      ?>
       <h5 class="feature-1">Reels</h5>
       <h5 class="feature-2">Photoshoot</h5>
       <h5 class="feature-3">Video Editing</h5>
