@@ -1,0 +1,45 @@
+
+body{
+  background-color:rgb(243,244,230) ;
+}
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-block: 2rem 0;
+    padding-inline: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    
+  }
+  
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav__links a {
+    font-weight: 500;
+  }
+  
+  .nav__links .logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family:'Beloved';
+  }
+  
+  .nav__left a {
+    color: grey;
+  }
+  
+  
+  .nav__links a:hover {
+    color: black;
+  }
