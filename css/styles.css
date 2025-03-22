@@ -2,7 +2,7 @@
 
 :root {
   
-  --text-dark: rgb(39,96,64);
+  
   --text-dark: grey;
   --white: #ffffff;
   --max-width: 1600px;
@@ -38,18 +38,6 @@ body {
   background-color:var(--background-color) ;
 }
 
-/* body::after {
-  position: fixed;
-  content: "";
-  height: 100%;
-  width: 0;
-  top: 0;
-  right: 0;
-  background-color: var(--text-dark);
-  z-index: -1;
-
-  animation: body-bg 1s ease-in-out forwards;
-} */
 
 @keyframes body-bg {
   0% {
@@ -80,17 +68,16 @@ body::before {
   margin-inline: auto;
   /* overflow: hidden; */
 }
-
-nav {
+.nav_head {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding-block: 2rem 0;
-  padding-inline: 1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .nav__links {
@@ -98,24 +85,21 @@ nav {
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding: 0;
+  margin: 0;
 }
 
 .nav__links a {
   font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav__links .logo {
   font-size: 1.2rem;
   font-weight: 800;
-  font-family:'Beloved';
-}
-
-.nav__left a {
-  color: var(--text-dark);
-}
-
-.nav__right a {
-  color: var(--text-dark);
+  font-family: 'Beloved';
 }
 
 .nav__links a:hover {
@@ -293,49 +277,6 @@ nav {
   line-height: 1.6;
 }
 
-.footer {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  padding-inline: 1rem;
-  bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.footer p {
-  font-size: 0.9rem;
-  color: var(--black);
-}
-
-.footer__links {
-  list-style: none;
-  display: flex;
-  
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  
-}
-
-.footer__links li {
-  opacity: 0;
-  animation: fade__in 0.3s ease-in-out forwards;
-  
-}
-
-.footer__links li:nth-child(1) {
-  animation-delay: 6s;
-}
-.footer__links li:nth-child(2) {
-  animation-delay: 6.5s;
-}
-.footer__links li:nth-child(3) {
-  animation-delay: 7s;
-}
 
 @keyframes fade__in {
   0% {
@@ -344,14 +285,6 @@ nav {
   100% {
     opacity: 1;
   }
-}
-
-.footer__links a {
-  color: var(--text-dark);
-}
-
-.footer__links a:hover {
-  color: var(--primary-color);
 }
 
 @media (width > 540px) {
