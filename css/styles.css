@@ -37,7 +37,7 @@ a {
 }
 
 /* Navbar */
-.nav_head {
+nav {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -46,7 +46,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.7);
+  background: black;
   backdrop-filter: blur(15px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
