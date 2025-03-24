@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color:rgb(243,244,230) !important;
+    text-align: center;
+}
+.nav_head {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:var(--nav); /* More transparency */
+    backdrop-filter: blur(15px); /* Increased blur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav__links a {
+    font-weight: 500;
+    color: grey;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav__links .logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: 'Beloved';
+  }
+  
+  .nav__links a:hover {
+    color: var(--primary-color);
+  }
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.album-item {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.album-item:hover {
+    transform: scale(1.05);
+}
+
+.album-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.album-details {
+    margin-top: 10px;
+}
+
+.album-details h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.album-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+.album-details .role {
+    font-weight: bold;
+    color: #e63946;
+}

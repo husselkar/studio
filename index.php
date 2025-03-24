@@ -19,7 +19,7 @@
           <?php
           session_start();
           if(isset($_SESSION['is_login'])){
-            echo'<li><a  href="#hire">Hire</a></li>';
+            echo'<li><a  href="dash.php">Hire</a></li>';
           }
           ?>
           <li><a  href="#">Contact Us</a></li>
@@ -90,7 +90,10 @@
             <label for="floatingPassword">Password</label>
           </div>
         
-          <button class="btn btn-primary btn-sm" type="submit">Sign up</button>
+          
+          <button type="button" class="btn btn-primary btn-sm btn-block " id="registerbtn"  onclick=adduser()>REGISTER</button>
+          
+          <div class="text-center mt-5"><a href=" ">Don't have an account? Register.</a></div>
           
           <br>
         </form>
