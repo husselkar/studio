@@ -1,7 +1,7 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 //     //ajax call from existing email verification
-$("#useremail").on("keypress blur",function(){
-        var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+$("#useremail").on("blur",function(){
+    var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
         var useremail = $("#useremail").val();
         $.ajax({
             url:"users/adduser.php",
@@ -11,9 +11,9 @@ $("#useremail").on("keypress blur",function(){
                 useremail : useremail, 
             },
             success: function(data){
-                if(data!=0){
+                console.log(data);
+                if(data !=0){
                     $("#msg2").html('<span >Email already taken !</span>'); 
-                    
                     $("#registerbtn").attr("disabled",true);
                 }else if(data == 0 && reg.test(useremail)){
                     $("#msg2").html('<span style="color:green;">Email ID is Available!</span>');
@@ -29,7 +29,7 @@ $("#useremail").on("keypress blur",function(){
             },   
         });
     });
- });
+//  });
  
 
 //----------------------------------------------------------------------------------
@@ -84,8 +84,8 @@ function adduser(){
                 username : username,
                 password : password,
             },
-            success:function(data){1
-
+            success: function(data){
+                console.log(data);
                 if(data == "OK"){
                     $("#successMsg").html( '<span class="alert alert-success">Registration Successfull !</span>');
                     clearRegfield();
@@ -98,9 +98,9 @@ function adduser(){
         
     }
 } 
-function clearRegfield(){  // Line 65
+function clearRegfield(){  
     $("#userRegForm").trigger("reset");  
-    $("#msg1, #msg2, #msg3, #msg4, #msg5").html(""); // FIXED LINE  
+    $("#msg1, #msg2, #msg3, #msg4, #msg5").html(""); 
 }
 
 
@@ -111,31 +111,34 @@ function checkuserlogin(){
     var userlogpass=$("#userlogpass").val();
    
     if(userlogemail.trim()==""){
-        $("#msg2").html('<span>Please Enter Email !</span>'); 
+        $("#msg1").html('<span class="text-danger">Please Enter Email !</span>'); 
+        $("#loginbtn").attr(disable,true);
+    }else if(userlogemail.trim() !== "" && !reg.test(userlogemail)){
+        $("#msg1").html('<span class="text-danger">Please Enter  a valid Email Eg. abd@xyz.com !</span>'); 
         $("#userlogemail").focus();
-        return false;  
-    }
-    else if (userlogemail.trim() !== "" && !reg.test(userlogemail)){
-        $("#msg2").html('<span>Please Enter  a valid Email Eg. abd@xyz.com !</span>'); 
-        $("#useremail").focus();
     }else if(userlogpass.trim()==""){
-            $("#msg4").html('<span>Please Enter Password !</span>'); 
-            $("#userlogpass").focus();
-            return false; 
+        $("#msg2").html('<span>Please Enter Password !</span>'); 
+        $("#userlogpass").focus();
+        
+    
+    }else if(userlogpass.trim()==""){
+        $("#msg2").html('<span>OK</span></span>'); 
+        $("#userlogpass").focus();
     }else{
     $.ajax({
         url:'users/adduser.php',
         method:'POST',
+        dataType:"json",
         data:{
             checkLogemail:"checklogemail",
             userlogemail : userlogemail,
             userlogpass : userlogpass,
         },
         success:function(data){
-            if(data ==0){
+            if(data == 0){
                 $("#loginstat").html('<small class=" alert alert-danger">Invalid Email or Password !</small>');
             }else if(data == 1){
-                $("#loginstat").html( '<div class="spinner-border text-success" role="status"></div> ');   
+                $("#loginstat").html( '<div class="spinner-border text-success" role="status"></div> <p>redirecting....</p>');   
                 setTimeout(()=>{
                     window.location.href="index.php";
                 },1000);

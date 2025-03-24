@@ -35,7 +35,7 @@
               <h5 class="text-center mb-4">LOGIN</h5>
               <form role="form">
                   <div class="mb-3">
-                  <small id="msg2" class="d-block"></small>
+                  <span id="msg1" class="d-block "></span>
                   <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                     <input type="email" class="form-control" id="userlogemail" placeholder="Enter your Email"/>
@@ -43,14 +43,14 @@
                 </div>
 
                 <div class="mb-3">
-                <small id="msg4" class="d-block text-danger"></small>
+                <span id="msg2" class="d-block text-danger"></span>
                   <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     <input type="password" class="form-control" id="userlogpass" placeholder="Enter your Password" />
                   </div>
                 </div>
                 <small  class=" d-block mt-4 mb-4" id="loginstat"></small>
-                <button type="button" class="btn btn-primary w-100" onclick=checkuserlogin()>LOGIN</button>
+                <button type="button" class="btn btn-primary w-100" id="loginbtn" onclick=checkuserlogin()>LOGIN</button>
                 
                 <div class="text-center mt-3">
                   <a href="register.php">Don't have an account? Sign up</a>

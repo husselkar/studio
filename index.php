@@ -16,7 +16,12 @@
         <ul class="nav__links nav__left">
           <li><a class="logo " href="index.php" >BOLD VIEW</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a  href="#hire">Hire</a></li>
+          <?php
+          session_start();
+          if(isset($_SESSION['is_login'])){
+            echo'<li><a  href="#hire">Hire</a></li>';
+          }
+          ?>
           <li><a  href="#">Contact Us</a></li>
         </ul>
         <ul class="nav__links nav__right">
@@ -61,79 +66,18 @@
       <div class="about-content">
         <h2>About Us</h2>
         <p>
-          "BoldView Studios is dedicated to crafting meaningful and memorable
-          visual content. We specialize in video and photo shoot services for
-          cafes, hotels, and retail shops. 
-        </p>
-        <p>
-          Our talented team of managers,
-          creators, and editors bring a fresh perspective to each project,
-          amplifying your brands essence."
-        </p>
+        BoldView Studios is a hub for freelance photographers and v
+        ideographers to showcase their skills and connect with clients.
+         Get hired for projects, gain exposure, and bring brands to life with stunning visuals.
+        </p>  
       </div>
     </section>
-    <div class="album py-5 bg-none">
-      <div class="container">
-        <h2 id="hire" class="text-center ">FOR HIRE: </h2>
-  
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-  
-              <div class="card-body">
-                <p class="card-text">Person Details</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary border">View</button>
-                    
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card shadow-sm">
-              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-  
-              <div class="card-body">
-                <p class="card-text">Person Details</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary border">View</button>
-                    
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-            <div class="card-body">
-              <p class="card-text">Person Details</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary border">View</button>
-                  
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        </div>
-      </div>
-    </div>
 <section>
   <div class="container col-xl-10 col-xxl-8 px-4 py-5">
     <div class="row align-items-center g-lg-5 py-5">
       <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Sign In here</h1>
-        <p class="col-lg-10 fs-4"> Subtext here</p>
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3"> Applicant Sign In here</h1>
+        <p class="col-lg-10 fs-4 mt-5">"Showcase your talent, connect with clients, and grow your freelance photography and videography business – Join Bold Views Studio today!"</p>
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
         <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
@@ -156,7 +100,7 @@
 </section>
 <!--Footer-->
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 px-5 border-top">
-  <p class="col-md-4 mb-0 text-muted">© 2022 Company, Inc</p>
+  <p class="col-md-4 mb-0 text-muted">© 2025 Company, Inc</p>
 
   <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
     <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>

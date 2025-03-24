@@ -79,7 +79,7 @@
                 </div>
 
                 <button type="button" class="btn btn-primary btn-sm btn-block w-100" id="registerbtn"  onclick=adduser()>REGISTER</button>
-                <span id="successMsg" class=" d-block mt-3"> </span>
+                <span id="successMsg" class=" d-block mt-3"></span>
                 <div class="text-center mt-3">
                   <a href="login.php">Already have an account? Login</a>
                 </div>
