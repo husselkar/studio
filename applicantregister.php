@@ -34,14 +34,14 @@
         <div class="col-md-4">
           <div class="card shadow p-4">
             <div class="card-body">
-              <h5 class="text-center mb-4">REGISTER</h5>
-              <form id="userRegForm" method="" action="#">
+              <h5 class="text-center mb-4">APPLICANT REGISTER</h5>
+              <form id="appRegForm" method="" action="#">
 
                 <div class="mb-3">
                   <small id="msg1" class="d-block text-danger"></small>
                   <div class="input-group">
                     <span class="input-group-text" ><i class="fa fa-user"></i></span>
-                    <input type="text" class="form-control" placeholder="Your Name" id="name" required/>
+                    <input type="text" class="form-control" placeholder="Your Name" id="appname" required/>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@
                 <small id="msg2" class="d-block"></small>
                   <div class="input-group">
                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
-                    <input type="email" class="form-control" placeholder="Your Email" id="useremail" required />
+                    <input type="email" class="form-control" placeholder="Your Email" id="appemail" required />
                   </div>
                 </div>
                 
@@ -58,7 +58,7 @@
                 <small id="msg3" class="d-block text-danger"></small>
                   <div class="input-group">
                     <span class="input-group-text"><i class="fa fa-users"></i></span>
-                    <input type="text" class="form-control" placeholder="Username" id="username" />
+                    <input type="text" class="form-control" placeholder="Username" id="appusername" />
                   </div>
                 </div>
 
@@ -78,10 +78,10 @@
                   </div>
                 </div>
 
-                <button type="button" class="btn btn-primary btn-sm btn-block w-100" id="registerbtn"  onclick=adduser()>REGISTER</button>
+                <button type="button" class="btn btn-primary btn-sm btn-block w-100" id="registerbtn"  onclick=addapplicant()>REGISTER</button>
                 <span id="successMsg" class=" d-block mt-3"> </span>
                 <div class="text-center mt-3">
-                  <a href="login.php">Already have an account? Login</a>
+                  <a href="index.php">Already have an account? Login</a>
                 </div>
 
               </form>

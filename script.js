@@ -32,6 +32,13 @@ const profiles = [
 const albumGrid = document.querySelector(".album-grid");
 
 function loadProfiles() {
+    if (!albumGrid) {
+        console.error("Album grid element not found");
+        return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
     profiles.forEach(profile => {
         const card = document.createElement("div");
         card.classList.add("album-item");
@@ -44,8 +51,10 @@ function loadProfiles() {
                 <p><strong>Specialty:</strong> ${profile.specialty}</p>
             </div>
         `;
-        albumGrid.appendChild(card);
+        fragment.appendChild(card);
     });
+
+    albumGrid.appendChild(fragment);
 }
 
 loadProfiles();

@@ -4,14 +4,29 @@ if(!isset($_SESSION)){
 }
 include_once('../dbconnection.php');
 
-if(isset($_POST['register']) && isset($_POST['name']) && isset($_POST['appuseremail']) && isset($_POST['appusername']) && isset($_POST['password'])){
+//checking already existing applicant email 
+
+if(isset($_POST['checkemail'])  && isset($_POST['appemail'])){
+    $appemail= $_POST['appemail']; 
+    $sql = "SELECT app_email FROM applicant_table WHERE app_email= '".$appemail."' ";
+    $result = $conn->query($sql);
+    if ($result) {
+        $row = $result->num_rows;
+        echo ($row); 
+    } else {
+        echo "Error executing query";
+    }
     
-    $name= $_POST['appname'];
-    $appemail= $_POST['appemail'];
+}
+//insert applicant
+
+if(isset($_POST['appregister']) && isset($_POST['appname']) && isset($_POST['appemail']) && isset($_POST['appusername']) && isset($_POST['password'])){
     $appusername= $_POST['appusername'];
-    $appPassword= $_POST['apppassword'];
-    $sql=" INSERT INTO applicant_table (appusername,appname,app_email,app_pass) VALUES 
-    ('$appusername','$name','$appuseremail','$appPassword')";
+    $appname= $_POST['appname'];
+    $appemail= $_POST['appemail'];
+    $password= $_POST['password'];
+    $sql=" INSERT INTO applicant_table (appusername,appname,app_email,app_pass) 
+    VALUES ('$appusername','$appname','$appemail','$password')";
 
     if ($conn->query($sql)== TRUE){
         echo json_encode("OK");
@@ -19,22 +34,4 @@ if(isset($_POST['register']) && isset($_POST['name']) && isset($_POST['appuserem
         echo json_encode("FAILED");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

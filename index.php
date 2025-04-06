@@ -26,7 +26,6 @@
         </ul>
         <ul class="nav__links nav__right">
           <?php
-          session_start();
           if(isset($_SESSION['is_login'])){
             echo'<li><span><a  href="logout.php">Logout</a></span></li>
                 <li><a  href="#">profile</a></li>';
@@ -72,35 +71,39 @@
         </p>  
       </div>
     </section>
-<section>
-  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-center text-lg-start">
-        <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3"> Applicant Sign In here</h1>
-        <p class="col-lg-10 fs-4 mt-5">"Showcase your talent, connect with clients, and grow your freelance photography and videography business – Join Bold Views Studio today!"</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+    <?php
+    if(!isset($_SESSION['is_login'])){
+      echo '<section>
+      <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3"> Applicant Sign In here</h1>
+            <p class="col-lg-10 fs-4 mt-5">"Showcase your talent, connect with clients, and grow your freelance photography and videography business – Join Bold Views Studio today!"</p>
           </div>
-          <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+            
+              
+              <button type="button" class="btn btn-primary btn-sm btn-block " id="registerbtn"  onclick=adduser()>REGISTER</button>
+              
+              <div class="text-center mt-5"><a href="applicantregister.php">Dont have an account? Register.</a></div>
+              
+              <br>
+            </form>
           </div>
-        
-          
-          <button type="button" class="btn btn-primary btn-sm btn-block " id="registerbtn"  onclick=adduser()>REGISTER</button>
-          
-          <div class="text-center mt-5"><a href=" ">Don't have an account? Register.</a></div>
-          
-          <br>
-        </form>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>';
+    }
+  ?>
 <!--Footer-->
 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 px-5 border-top">
   <p class="col-md-4 mb-0 text-muted">© 2025 Company, Inc</p>

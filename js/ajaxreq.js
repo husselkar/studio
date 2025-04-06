@@ -1,8 +1,8 @@
-// $(document).ready(function(){
+$(document).ready(function(){
 //     //ajax call from existing email verification
 $("#useremail").on("blur",function(){
     var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-        var useremail = $("#useremail").val();
+    var useremail = $("#useremail").val();
         $.ajax({
             url:"users/adduser.php",
             method:"POST",
@@ -29,7 +29,7 @@ $("#useremail").on("blur",function(){
             },   
         });
     });
-//  });
+ });
  
 
 //----------------------------------------------------------------------------------
