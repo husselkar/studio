@@ -140,7 +140,7 @@ function checkuserlogin(){
             }else if(data == 1){
                 $("#loginstat").html( '<div class="spinner-border text-success" role="status"></div> <p>redirecting....</p>');   
                 setTimeout(()=>{
-                    window.location.href="../dash.php";
+                    window.location.href="index.php";
                 },1000);
             }
         }
