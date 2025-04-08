@@ -92,7 +92,7 @@
               </div>
             
               
-              <button type="button" class="btn btn-primary btn-sm btn-block " id="registerbtn"  onclick=adduser()>REGISTER</button>
+              <button type="button" class="btn btn-primary btn-sm btn-block " id="registerbtn"  onclick=adduser()>Sign In</button>
               
               <div class="text-center mt-5"><a href="applicantregister.php">Dont have an account? Register.</a></div>
               
