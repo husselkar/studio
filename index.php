@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     <title>BOLD VIEWS STUDIO</title>
   </head>
   
@@ -80,22 +83,22 @@
             <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3"> Applicant Sign In here</h1>
             <p class="col-lg-10 fs-4 mt-5">"Showcase your talent, connect with clients, and grow your freelance photography and videography business – Join Bold Views Studio today!"</p>
           </div>
-          <div class="col-md-10 mx-auto col-lg-5">
+          <div class="col-md-10 mx-auto mh-auto col-lg-5">
             <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <span id="msg1" class="d-block "></span>  
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="freelancer_email" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
               </div>
+              <span id="msg2" class="text-danger"></span>
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="freelancer_password" placeholder="Password">
                 <label for="floatingPassword">Password</label>
               </div>
-            
-              
-              <button type="button" class="btn btn-primary btn-sm btn-block " id="registerbtn"  onclick=adduser()>Sign In</button>
-              
+              <button type="button" class="btn btn-primary btn-sm btn-block " id="loginbtn"  onclick=checkapplicantlogin()>Sign In</button>
+              <small  class=" d-block mt-4 mb-4" id="applicantloginstat"></small> 
               <div class="text-center mt-5"><a href="applicantregister.php">Dont have an account? Register.</a></div>
-              
+              <small  class=" d-block mt-4 mb-4" id="applicantloginstat"></small>
               <br>
             </form>
           </div>
@@ -120,10 +123,11 @@
     <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
   </ul>
 </footer>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     
+    <script type="text/javascript" src="js/applicantAjaxreq.js" ></script>
     <!-- user ajax call javascript -->
      
   </body>
+  
 </html>
