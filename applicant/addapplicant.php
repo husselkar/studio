@@ -4,34 +4,30 @@ if(!isset($_SESSION)){
 }
 include_once('../dbconnection.php');
 
-//checking already existing applicant email 
+// Check for duplicate email
+// if(isset($_POST['checkemail']) && isset($_POST['freelancer_email'])){
+//     $email = $_POST['freelancer_email']; 
+//     $sql = "SELECT freelancer_email FROM freelancer_table WHERE freelancer_email = '$email'";
+//     $result = $conn->query($sql);
+//     echo $result ? $result->num_rows : "Error executing query";
+// }
 
-if(isset($_POST['checkemail'])  && isset($_POST['appemail'])){
-    $appemail= $_POST['appemail']; 
-    $sql = "SELECT app_email FROM applicant_table WHERE app_email= '".$appemail."' ";
-    $result = $conn->query($sql);
-    if ($result) {
-        $row = $result->num_rows;
-        echo ($row); 
-    } else {
-        echo "Error executing query";
-    }
+// Insert new freelancer
+if(isset($_POST['freelancer_register']) && isset($_POST['freelancer_name']) && isset($_POST['freelancer_email']) && isset($_POST['freelancer_username']) && isset($_POST['freelancer_password'])){
+    $name = $_POST['freelancer_name'];
+    $email = $_POST['freelancer_email'];
+    $username = $_POST['freelancer_username'];
+    $password = $_POST['freelancer_password'];
+
+    $sql = "INSERT INTO freelancer_table (freelancer_name, freelancer_email, freelancer_username, freelancer_password)
+            VALUES ('$name', '$email', '$username', '$password')";
+
+        if ($conn->query($sql)== TRUE){
+            echo json_encode("OK");
+        }else{
+            echo json_encode("FAILED");
+        }
     
-}
-//insert applicant
 
-if(isset($_POST['appregister']) && isset($_POST['appname']) && isset($_POST['appemail']) && isset($_POST['appusername']) && isset($_POST['password'])){
-    $appusername= $_POST['appusername'];
-    $appname= $_POST['appname'];
-    $appemail= $_POST['appemail'];
-    $password= $_POST['password'];
-    $sql=" INSERT INTO applicant_table (appusername,appname,app_email,app_pass) 
-    VALUES ('$appusername','$appname','$appemail','$password')";
-
-    if ($conn->query($sql)== TRUE){
-        echo json_encode("OK");
-    }else{
-        echo json_encode("FAILED");
-    }
 }
 ?>
