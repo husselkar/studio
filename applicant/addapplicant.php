@@ -33,20 +33,17 @@ if(isset($_POST['freelancer_register']) && isset($_POST['freelancer_name']) && i
 //applicant login
 if(!isset($_SESSION['is_login'])){
    
-    if(isset($_POST['checkapplogemail']) && isset($_POST['freelancer_email']) && isset($_POST['freelancer_password'])){
-        
+    if(isset($_POST['checkapplogemail']) && isset($_POST['freelancer_email']) && isset($_POST['freelancer_password'])){ 
         $freelancer_email = $_POST['freelancer_email'];
         $freelancer_password = $_POST['freelancer_password'];
         $sql = "SELECT freelancer_email,freelancer_password FROM freelancer_table WHERE freelancer_email = '".$freelancer_email."'  AND  freelancer_password= '".$freelancer_password."'" ;
         $result = $conn -> query($sql);
         $row = $result -> num_rows;
-        echo $row;
         if($row == 1){
             echo json_encode ($row);
             $_SESSION['is_login'] = true;
             $_SESSION['freelancer_email'] =$freelancer_email;
-            
-            
+
         }else if($row == 0){
             echo json_encode($row); 
         }

@@ -59,46 +59,49 @@ function freelancerRegister() {
     }
 }
 
-//Ajax call for user login verification 
-function checkapplicantlogin(){
+function checkapplicantlogin() {
     var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    var freelancer_email =$("#freelancer_email").val();
-    var freelancer_password =$("#freelancer_password").val();
-   
-    if(freelancer_email.trim()==""){
-        $("#msg1").html('<span class="text-danger">Please Enter Email !</span>'); 
-        $("#loginbtn").attr(disable,true);
-    }else if(freelancer_email.trim() !== "" && !reg.test(freelancer_email)){
-        $("#msg1").html('<span class="text-danger">Please Enter  a valid Email Eg. abd@xyz.com !</span>'); 
+    var freelancer_email = $("#freelancer_email").val();
+    var freelancer_password = $("#freelancer_password").val();
+
+    if (!freelancer_email || freelancer_email.trim() === "") {
+        $("#msg1").html('<span class="text-danger">Please Enter Email!</span>');
+        $("#loginbtn").attr("disabled", true);
+        return;
+    }
+
+    if (!reg.test(freelancer_email.trim())) {
+        $("#msg1").html('<span class="text-danger">Please Enter a valid Email (e.g., abd@xyz.com)!</span>');
         $("#freelancer_email").focus();
-    }else if(freelancer_password.trim()==""){
-        $("#msg2").html('<span>Please Enter Password !</span>'); 
+        return;
+    }
+
+    if (!freelancer_password || freelancer_password.trim() === "") {
+        $("#msg2").html('<span class="text-danger">Please Enter Password!</span>');
         $("#freelancer_password").focus();
-        
-    
-    }else if(freelancer_password.trim()==""){
-        $("#msg2").html('<span>OK</span></span>'); 
-        $("#freelancer_password").focus();
-    }else{
+        return;
+    }
+
+    console.log('loginclick');
     $.ajax({
-        url:'users/adduser.php',
-        method:'POST',
-        dataType:"json",
-        data:{
-            checkLogemail:"checklogemail",
-            freelancer_email : freelancer_email,
-            freelancer_password : freelancer_password,
+        url: 'applicant/addapplicant.php',
+        method: 'POST',
+        dataType: "json",
+        data: {
+            checkapplogemail: "checkapplogemail",
+            freelancer_email: freelancer_email,
+            freelancer_password: freelancer_password
         },
-        success:function(data){
-            if(data == 0){
-                $("#applicantloginstat").html('<small class=" alert alert-danger">Invalid Email or Password !</small>');
-            }else if(data == 1){
-                $("#applicantloginstat").html( '<div class="spinner-border text-success" role="status"></div> <p>redirecting....</p>');   
-                setTimeout(()=>{
-                    window.location.href="index.php";
-                },1000);
+        
+        success: function (data) {
+            if (data == 0) {
+                $("#applicantloginstat").html('<small class="alert alert-danger">Invalid Email or Password!</small>');
+            } else if (data == 1) {
+                $("#applicantloginstat").html('<div class="spinner-border text-success" role="status"></div><p>redirecting....</p>');
+                setTimeout(() => {
+                    window.location.href = "applicantdash.php";
+                }, 1000);
             }
         }
-    })
-}
+    });
 }

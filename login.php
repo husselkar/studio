@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap 5 & Font Awesome -->
@@ -65,4 +67,9 @@
 
   </body>
   <script type="text/javascript" src="js/ajaxreq.js" ></script>
+  <script type="text/javascript">
+  (function(){
+    emailjs.init("E9UM_UOz2XuWd_bg3"); // from EmailJS dashboard
+  })();
+</script>
 </html>
